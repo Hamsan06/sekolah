@@ -1,0 +1,25 @@
+<?php
+// database connection code
+// $con = mysqli_connect('localhost', 'database_user', 'database_password','database');
+
+$con = mysqli_connect('localhost', 'root', '','db_siswa');
+
+// get the post records
+$id_siswa = $_POST['id_siswa'];
+$nama = $_POST['nama'];
+$tanggal_lahir = $_POST['tanggal_lahir'];
+$alamat = $_POST['alamat'];
+$kelas = $_POST['kelas'];
+
+// database insert SQL code
+$sql = "INSERT INTO `tbl_contact` (`Id`, `id_siswa`, `nama`, `tanggal_lahir`, `alamat`, 'kelas') VALUES ('0', '$id_siswa', '$nama', '$tanggal_lahir', '$alamat', '$kelas')";
+ 
+// insert in database 
+$rs = mysqli_query($con, $sql);
+
+if($rs)
+{
+	echo "Contact Records Inserted";
+}
+
+?>
